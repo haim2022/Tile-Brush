@@ -10,7 +10,7 @@ namespace TiledImage
         public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
         {
             double h = 1 / (double)value;
-            return new Rect(0, 0, 1, h);
+            return new Rect(0, 1, 1, h);
         }
 
         public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)

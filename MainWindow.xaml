@@ -36,7 +36,8 @@
 
         <Grid Grid.Column="0" Background="LightGoldenrodYellow">
 
-            <Rectangle Width="{Binding RectangleWidth}" Height="{Binding RectangleHeight}" >
+            <Rectangle Width="{Binding RectangleWidth}" 
+                       Height="{Binding RectangleHeight}" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\duck.png" 
                                 TileMode="Tile"
@@ -67,7 +68,7 @@
                 <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ImageWidth}" IsReadOnly="True"></TextBox>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Height"></TextBlock>
                 <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ImageHeight}" IsReadOnly="True"></TextBox>
-                <TextBlock Grid.Row="2" Grid.Column="0" Text="RepeatX"></TextBlock>
+                <TextBlock Grid.Row="2" Grid.Column="0" Text="Repeat Y"></TextBlock>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding RepeatX}"></TextBox>
                 <TextBlock Grid.Row="3" Grid.Column="0" Text="Actual Height"></TextBlock>
                 <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding RectangleHeight}" IsReadOnly="True"></TextBox>
