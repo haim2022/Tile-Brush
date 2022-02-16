@@ -34,14 +34,14 @@
             <ColumnDefinition></ColumnDefinition>
         </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
-            
+        <Grid Grid.Column="0" Background="LightGoldenrodYellow">
+
             <Rectangle Width="{Binding RectangleWidth}" Height="{Binding RectangleHeight}" >
                 <Rectangle.Fill>
                     <ImageBrush ImageSource="images\duck.png" 
                                 TileMode="Tile"
                                 Viewport="{Binding RepeatX, Converter={StaticResource ViewPortHeightConverter}}">
-                        
+
                     </ImageBrush>
                 </Rectangle.Fill>
             </Rectangle>
@@ -49,7 +49,7 @@
         <Grid Grid.Column="1">
             <Grid Width="320" 
                   Height="420"
-                  Margin="20,10"
+                  Margin="10,60"
                   VerticalAlignment="Top" Background="LightGray">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="10*"></RowDefinition>
@@ -64,13 +64,13 @@
                     <ColumnDefinition Width="100*"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
                 <TextBlock Grid.Row="0" Grid.Column="0" Text="Width"></TextBlock>
-                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ImageWidth}"></TextBox>
+                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding ImageWidth}" IsReadOnly="True"></TextBox>
                 <TextBlock Grid.Row="1" Grid.Column="0" Text="Height"></TextBlock>
-                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ImageHeight}"></TextBox>
+                <TextBox Grid.Row="1" Grid.Column="1" Text="{Binding ImageHeight}" IsReadOnly="True"></TextBox>
                 <TextBlock Grid.Row="2" Grid.Column="0" Text="RepeatX"></TextBlock>
                 <TextBox Grid.Row="2" Grid.Column="1" Text="{Binding RepeatX}"></TextBox>
-                <TextBlock Grid.Row="3" Grid.Column="0" Text="Real Height"></TextBlock>
-                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding RectangleHeight}"></TextBox>
+                <TextBlock Grid.Row="3" Grid.Column="0" Text="Actual Height"></TextBlock>
+                <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding RectangleHeight}" IsReadOnly="True"></TextBox>
                 <Button Grid.Row="4" 
                         Grid.Column="0" 
                         HorizontalAlignment="Left" 
@@ -78,11 +78,20 @@
                         Content="OK"
                         Command="{Binding OkCommand}"
                         />
-                <Image Grid.Row="5" 
-                       Grid.Column="0" 
-                       Grid.ColumnSpan="2"  
-                       Source="images\duck.png" 
-                       Stretch="None"></Image>
+                <Grid Grid.Row="5"
+                      Grid.Column="0"
+                      Grid.ColumnSpan="2" 
+                      >
+                    <Image Source="images\duck.png" 
+                           Stretch="None"/>
+                    <TextBlock VerticalAlignment="Top" 
+                               HorizontalAlignment="Center"
+                               Margin="14"
+                               Width="200"
+                               FontSize="12"
+                               Foreground="Yellow"
+                               Text="original picture"/>
+                </Grid>
             </Grid>
         </Grid>
     </Grid>

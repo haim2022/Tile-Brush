@@ -12,7 +12,6 @@ namespace TiledImage
         private double repeatX;
         private double rectangleHeight;
         private double rectangleWidth;
-        //private double viewportHeight;
 
         public MainViewModel()
         {
@@ -21,20 +20,14 @@ namespace TiledImage
             RepeatX = 1.0;
             RectangleHeight = ImageHeight;
             RectangleWidth = imageWidth;
-            //ViewportHeight = 1.0;
 
             OkCommand = new RelayCommand(OnOk);
         }
 
         private void OnOk()
         {
-            // calc the ratio
-            double ratio = ImageWidth / ImageHeight;
-
             RectangleHeight = RepeatX * ImageHeight;
-            RectangleWidth = ImageWidth / ratio;
             RaisePropertyChanged("RepeatX");
-            //ViewportHeight = 1 / RepeateX;
         }
 
         public double ImageWidth
@@ -77,14 +70,6 @@ namespace TiledImage
                 Set(ref rectangleWidth, value);
             }
         }
-        //public double ViewportHeight 
-        //{ 
-        //    get => viewportHeight;
-        //    set
-        //    {
-        //        Set(ref viewportHeight, value);
-        //    }
-        //}
         public RelayCommand OkCommand { get; set; }
     }
 }
